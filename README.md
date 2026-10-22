@@ -2,7 +2,13 @@
 
 > An ultra-luxury, 3D scroll-driven bespoke tailoring digital experience inspired by Savile Row craftsmanship and high-fashion ateliers.
 
-**Crafted by [Nazmul](https://github.com/hello-nazzmul)**
+[![Vercel Deployment](https://img.shields.io/badge/Live%20Demo-hexaboot.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://hexaboot.vercel.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-HEXABOOT-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nazmul-d3v/HEXABOOT)
+
+**Crafted by [Nazmul](https://github.com/nazmul-d3v)**
+
+🌐 **Live Website:** [https://hexaboot.vercel.app](https://hexaboot.vercel.app)  
+📦 **Repository:** [https://github.com/nazmul-d3v/HEXABOOT](https://github.com/nazmul-d3v/HEXABOOT)
 
 ---
 
