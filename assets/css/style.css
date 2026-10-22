@@ -305,7 +305,7 @@ button {
   letter-spacing: 0.12em;
   cursor: pointer;
   outline: none;
-  max-width: 170px;
+  max-width: 220px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

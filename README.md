@@ -39,7 +39,7 @@
 - **Real Luxury Soundtrack Player**:
   - 🎹 *Gymnopédie No. 1* — Erik Satie (Atelier Piano)
   - 🌙 *Clair de Lune* — Claude Debussy (Midnight Romance)
-  - 🎞️ *Viral Reel Audio* — Original social media sound
+  - 🎞️ *The Procession* — Original cinematic bespoke soundtrack
   - Smooth audio fade in/fade out and responsive animated golden equalizer bars.
 - **Bespoke Private Fitting Modal**: Elegant appointment scheduling dialog for bespoke commissions.
 - **Fully Responsive & Accessible**: Custom adaptations for desktop, tablet, and mobile with `prefers-reduced-motion` compliance.
