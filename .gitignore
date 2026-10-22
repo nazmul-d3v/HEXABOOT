@@ -1,0 +1,4 @@
+.vercel
+node_modules
+*.log
+fb_thumb.jpg

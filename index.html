@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HEXABOOT — The Anatomy of a Suit</title>
+  <meta name="description" content="HEXABOOT bespoke tailoring. Seven movements of craft, from the measure of a man to the last quarter-inch of a working cuff." />
+
+  <!-- Typography: Cormorant Garamond & Jost -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/png" href="assets/img/hexaboot.png" />
+</head>
+<body>
+
+  <!-- ===== Loader ===== -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">
+      <img src="assets/img/hexaboot.png" alt="HEXABOOT Crest" />
+    </div>
+    <div class="loader__bar"><span id="loaderFill"></span></div>
+    <div class="loader__pct"><span id="loaderPct">0</span><i>%</i></div>
+    <div class="loader__label">Preparing the atelier</div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="header">
+    <a class="brand" href="#top" aria-label="Hexaboot home">
+      <img class="brand__mark" src="assets/img/hexaboot.png" alt="HEXABOOT" />
+      <span class="brand__word">HEXABOOT</span>
+    </a>
+    <nav class="nav">
+      <div class="sound-control-wrapper">
+        <button type="button" class="sound-toggle" id="soundToggle" aria-label="Toggle luxury atelier music">
+          <span class="sound-bars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span class="sound-label">Music: Off</span>
+        </button>
+        <div class="sound-track-wrap">
+          <select id="audioTrackSelect" aria-label="Choose soundtrack" title="Select audio piece">
+            <option value="atelier">Gymnopédie No. 1 · Satie (Atelier Piano)</option>
+            <option value="clair">Clair de Lune · Debussy (Midnight Romance)</option>
+            <option value="reel">Viral Reel Audio (Original Sound)</option>
+          </select>
+        </div>
+      </div>
+      <audio id="bgAudio" loop preload="auto">
+        <source src="assets/audio/atelier_luxury.mp3" type="audio/mpeg" />
+      </audio>
+      <a href="#atelier">Atelier</a>
+      <a href="#collection">Collection</a>
+      <a class="nav__cta" href="#book" data-open-modal="fitting">Book a Fitting</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ===== The scroll scene (pinned canvas + editorial panels) ===== -->
+    <section class="scene" id="scene" aria-label="The making of a Hexaboot suit">
+      <div class="sticky" id="sticky">
+
+        <canvas id="frames" class="frames-canvas"></canvas>
+
+        <!-- cinematic overlays -->
+        <div class="grade grade--vignette"></div>
+        <div class="grade grade--top"></div>
+        <div class="grade grade--bottom"></div>
+        <div class="grain"></div>
+
+        <!-- Navigation dots for quick scrub / preview -->
+        <div class="scene-nav" aria-label="Movement navigation">
+          <div class="scene-nav__dot" data-target="1"><span class="scene-nav__tooltip">01 Foundation</span></div>
+          <div class="scene-nav__dot" data-target="2"><span class="scene-nav__tooltip">02 Waistcoat</span></div>
+          <div class="scene-nav__dot" data-target="3"><span class="scene-nav__tooltip">03 Canvas</span></div>
+          <div class="scene-nav__dot" data-target="4"><span class="scene-nav__tooltip">04 The Cut</span></div>
+          <div class="scene-nav__dot" data-target="5"><span class="scene-nav__tooltip">05 The Man</span></div>
+          <div class="scene-nav__dot" data-target="6"><span class="scene-nav__tooltip">06 Procession</span></div>
+          <div class="scene-nav__dot" data-target="7"><span class="scene-nav__tooltip">07 The Detail</span></div>
+        </div>
+
+        <!-- Hero title (Movement 00 — over the particle form) -->
+        <div class="panel panel--hero" data-panel="hero">
+          <p class="eyebrow">Hexaboot · Bespoke Since MCMXC8</p>
+          <h1 class="hero-title">The Anatomy<br><em>of a Suit</em></h1>
+          <p class="hero-sub">Eight movements of craft, from the measure of a man to the last quarter-inch of a working cuff.</p>
+          <div class="scroll-cue"><span></span>Scroll to Explore</div>
+        </div>
+
+        <!-- Editorial panels, alternating left / right -->
+        <article class="panel panel--left" data-panel="1">
+          <span class="panel__index">01</span>
+          <p class="panel__kicker">The Foundation</p>
+          <h2 class="panel__title">A Shirt of<br>Pure Cotton</h2>
+          <p class="panel__body">Cut strictly to posture, balancing slope, chest drop, and collar height. A single needle seam across 22 stitches per inch.</p>
+          <p class="panel__spec"><i>Cloth</i> Egyptian Two-Ply Poplin · 120s</p>
+        </article>
+
+        <article class="panel panel--right" data-panel="2">
+          <span class="panel__index">02</span>
+          <p class="panel__kicker">The Waistcoat</p>
+          <h2 class="panel__title">Structure,<br>Held Close</h2>
+          <p class="panel__body">The waistcoat draws the line of the body inward. Five buttons, a silk-backed rear, and a tie cut on the bias so the knot falls true and never twists.</p>
+          <p class="panel__spec"><i>Silk</i> Mulberry, Woven in Como</p>
+        </article>
+
+        <article class="panel panel--left" data-panel="3">
+          <span class="panel__index">03</span>
+          <p class="panel__kicker">The Canvas</p>
+          <h2 class="panel__title">Built on<br>Full Canvas</h2>
+          <p class="panel__body">Horsehair and wool canvas hand-padded into the chest. It breathes, molds to body heat over decades, and never fuses or bubbles.</p>
+          <p class="panel__spec"><i>Construction</i> Hand-Padded Full Canvas</p>
+        </article>
+
+        <article class="panel panel--right" data-panel="4">
+          <span class="panel__index">04</span>
+          <p class="panel__kicker">The Cut</p>
+          <h2 class="panel__title">The Complete<br>Silhouette</h2>
+          <p class="panel__body">Roped shoulders, high armholes for effortless mobility, and a drape that commands presence without stiffness.</p>
+          <p class="panel__spec"><i>Cloth</i> Super 150's Merino · 240g</p>
+        </article>
+
+        <article class="panel panel--left" data-panel="5">
+          <span class="panel__index">05</span>
+          <p class="panel__kicker">The Man</p>
+          <h2 class="panel__title">Made<br>to Be Worn</h2>
+          <p class="panel__body">A garment that moves in unison with its wearer. Graceful proportions that flatter every stride and line of thought.</p>
+          <p class="panel__spec"><i>Fit</i> Individually Made to Measure</p>
+        </article>
+
+        <!-- Viral reel section: The Procession -->
+        <article class="panel panel--right" data-panel="6">
+          <span class="panel__index">06</span>
+          <p class="panel__kicker">The Procession</p>
+          <h2 class="panel__title">A Language<br>of Colour</h2>
+          <p class="panel__body">Four signature tones moving in concert through midnight mist. Charcoal, ecru, oyster grey, and deep burgundy flannel.</p>
+          <p class="panel__spec"><i>Palette</i> Four Signature Tones</p>
+        </article>
+
+        <article class="panel panel--left" data-panel="7">
+          <span class="panel__index">07</span>
+          <p class="panel__kicker">The Detail</p>
+          <h2 class="panel__title">The Last<br>Quarter-Inch</h2>
+          <p class="panel__body">Functioning surgeon's cuffs. Horn buttons, each hand-shanked. Pick-stitching you will only ever find by touch.</p>
+          <p class="panel__spec"><i>Finish</i> Working Surgeon's Cuffs</p>
+        </article>
+
+        <!-- progress -->
+        <div class="progress"><span id="progressFill"></span></div>
+      </div>
+    </section>
+
+    <!-- ===== Outro / CTA / Atelier Philosophy ===== -->
+    <section class="outro" id="atelier">
+      <div class="outro__mark"><img src="assets/img/hexaboot.png" alt="Hexaboot" /></div>
+      <p class="eyebrow eyebrow--center">The House of Bespoke Excellence</p>
+      <h2 class="outro__title">Tailoring<br>for the few.</h2>
+      <p class="outro__body">Every Hexaboot suit is cut to one man and one man only. Begin with a conversation, a measure, and a single bolt of cloth chosen for you alone.</p>
+      
+      <button type="button" class="btn" data-open-modal="fitting" id="book">Book a Private Fitting</button>
+
+      <!-- Atelier Craft Pillars -->
+      <div class="pillars" id="collection">
+        <div class="pillar">
+          <span class="pillar__num">I</span>
+          <h3 class="pillar__title">The First Measure</h3>
+          <p class="pillar__desc">Thirty-six unique measurements recorded across stance, balance, posture drop, and shoulder rotation. No shortcuts, no ready-to-wear templates.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar__num">II</span>
+          <h3 class="pillar__title">Savile Heritage</h3>
+          <p class="pillar__desc">Cut by master cutters with decades of bespoke discipline. Over eighty hours of hand needlework go into every single commissioned jacket.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar__num">III</span>
+          <h3 class="pillar__title">Cloth Archives</h3>
+          <p class="pillar__desc">Exclusive access to premier mills across Yorkshire and Biella. Dormeuil, Loro Piana, Fox Brothers, and Scabal vintage stock.</p>
+        </div>
+      </div>
+
+      <footer class="site-footer">
+        <div class="foot-brand">
+          <img src="assets/img/hexaboot.png" alt="HEXABOOT" />
+          <span>HEXABOOT</span>
+        </div>
+        <div class="foot-cols">
+          <div>
+            <h4>Atelier</h4>
+            <a href="#atelier">The House</a>
+            <a href="#scene">Full Canvas</a>
+            <a href="#collection">The Cloth Library</a>
+          </div>
+          <div>
+            <h4>Wardrobe</h4>
+            <a href="#scene">Suits</a>
+            <a href="#scene">Shirting</a>
+            <a href="#scene">Accessories</a>
+          </div>
+          <div>
+            <h4>Visit</h4>
+            <a href="#">Mayfair · London</a>
+            <a href="#" data-open-modal="fitting">By Appointment</a>
+            <a href="mailto:atelier@hexaboot.com">Contact</a>
+          </div>
+        </div>
+        <div class="foot-legal">
+          <span>© <span id="year"></span> Hexaboot Bespoke — Made by Nazmul.</span>
+          <span>Crafted with Cinematic Motion & Precision</span>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- ===== Private Fitting Modal Dialog ===== -->
+  <div class="modal-backdrop" id="fittingModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="fitting-modal">
+      <button type="button" class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
+      <p class="eyebrow">Private Appointment</p>
+      <h3 class="modal-title" id="modalTitle">Book Your Fitting</h3>
+      <p class="modal-desc">Private consultations take place at our Mayfair atelier or via private travel service. Please share your details below.</p>
+      
+      <form id="fittingForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="clientName">Full Name</label>
+            <input class="form-input" id="clientName" type="text" placeholder="Lord / Mr. Sterling" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="clientEmail">Email</label>
+            <input class="form-input" id="clientEmail" type="email" placeholder="sterling@private.com" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="clientPhone">Telephone</label>
+            <input class="form-input" id="clientPhone" type="tel" placeholder="+44 20 7946 0912" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fittingType">Commission Type</label>
+            <select class="form-select" id="fittingType">
+              <option value="two-piece">Two-Piece Bespoke Suit</option>
+              <option value="three-piece">Three-Piece Bespoke Suit</option>
+              <option value="tuxedo">Formal Evening / Tuxedo</option>
+              <option value="overcoat">Cashmere / Wool Overcoat</option>
+              <option value="full-wardrobe">Curated Seasonal Wardrobe</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clientNotes">Special Requests & Preferred Dates</label>
+          <input class="form-input" id="clientNotes" type="text" placeholder="Mayfair Atelier / Traveling Tailor Service" />
+        </div>
+
+        <button type="submit" class="btn form-submit">Request Private Appointment</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
